@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Box } from '@mui/material'
+import { Grid } from '@mui/material'
 import { useAppSelector } from './app/hooks'
 import { darkMode } from './features/layoutSlice'
 import PaperTL from './components/paperTL'
@@ -11,11 +11,10 @@ import PaperBL from './components/paperBL'
 function App() {
   const dark = useAppSelector(darkMode)
   return (
-    <Box
-      sx={{
+    <div
+      style={{
         padding: '20px',
         background: dark ? '#222831' : '#EEEEEE',
-        height: '210vh',
       }}
     >
       <Grid container spacing={2}>
@@ -38,7 +37,7 @@ function App() {
           <PaperTL />
         </Grid>
       </Grid>
-    </Box>
+    </div>
   )
 }
 

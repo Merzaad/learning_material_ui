@@ -16,6 +16,9 @@ export default function PaperBL() {
     >
       <AccordionM accordionId={0} />
       <AccordionM accordionId={1} />
+      <AccordionM accordionId={2} />
+      <AccordionM accordionId={3} />
+
     </Paper>
   )
 }

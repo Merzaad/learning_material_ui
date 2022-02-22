@@ -10,7 +10,7 @@ export interface LayoutState {
 const initialState: LayoutState = {
   darkMode: !!(localStorage.getItem('darkMode') === 'true'),
   cardMenu: [false, false, false, false],
-  accordionDrop: [false],
+  accordionDrop: [false, false, false, false],
 }
 
 export const layoutSlice = createSlice({
