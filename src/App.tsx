@@ -6,6 +6,7 @@ import PaperTL from './components/paperTL'
 import NavbarM from './components/navbar/navbar'
 import PaperM from './components/paperM'
 import PaperTR from './components/paperTR'
+import PaperBL from './components/paperBL'
 
 function App() {
   const dark = useAppSelector(darkMode)
@@ -14,7 +15,7 @@ function App() {
       sx={{
         padding: '20px',
         background: dark ? '#222831' : '#EEEEEE',
-        height: '200vh',
+        height: '210vh',
       }}
     >
       <Grid container spacing={2}>
@@ -31,7 +32,7 @@ function App() {
           <PaperM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperTL />
+          <PaperBL />
         </Grid>
         <Grid item xs={12} md={6}>
           <PaperTL />

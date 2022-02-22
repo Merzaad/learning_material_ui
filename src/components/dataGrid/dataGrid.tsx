@@ -76,13 +76,13 @@ export default function MdataGrid() {
         rows={rows}
         columns={columns}
         pageSize={5}
+        autoHeight
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
         sx={{
           background: dark ? '#141E27' : '#E0DDAA',
           color: dark ? '#E0DDAA' : '#141E27',
-          height: '50vh',
         }}
       />
     </Box>

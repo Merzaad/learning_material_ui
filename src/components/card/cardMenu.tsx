@@ -16,7 +16,7 @@ export default function CardMenu(props: {ancherId: number}) {
   return (
     <Menu
       anchorEl={ancher}
-      open={menu[ancherId]}
+      open={!!menu[ancherId]}
       onClose={close}
       elevation={0}
     >
