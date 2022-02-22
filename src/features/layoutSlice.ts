@@ -7,7 +7,7 @@ export interface LayoutState {
 }
 
 const initialState: LayoutState = {
-  darkMode: false,
+  darkMode: !!(localStorage.getItem('darkMode') === 'true'),
   cardMenu: [false, false],
 }
 
@@ -18,6 +18,7 @@ export const layoutSlice = createSlice({
     toggleDarkMode: (state) => {
       const x = state
       x.darkMode = !x.darkMode
+      localStorage.setItem('darkMode', String(x.darkMode))
     },
     toggleCardMenu: (state, action: PayloadAction<number>) => {
       const x = state

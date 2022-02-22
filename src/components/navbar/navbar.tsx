@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Container, Switch } from '@mui/material'
-import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { darkMode, toggleDarkMode } from '../features/layoutSlice'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { darkMode, toggleDarkMode } from '../../features/layoutSlice'
 
 export default function NavbarM() {
   const dispatch = useAppDispatch()

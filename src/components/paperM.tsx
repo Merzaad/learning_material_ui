@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Paper, Grid } from '@mui/material'
-import Mcard from './card'
+import Mcard from './card/card'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
 
@@ -16,10 +16,10 @@ export default function PaperM() {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Mcard cardId={1} />
+          <Mcard cardId={0} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mcard cardId={2} />
+          <Mcard cardId={1} />
         </Grid>
       </Grid>
     </Paper>

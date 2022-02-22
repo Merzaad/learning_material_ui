@@ -2,10 +2,10 @@ import * as React from 'react'
 import {
   Menu, MenuItem,
 } from '@mui/material'
-import { useAppSelector, useAppDispatch } from '../app/hooks'
-import { cardMenu, toggleCardMenu } from '../features/layoutSlice'
+import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { cardMenu, toggleCardMenu } from '../../features/layoutSlice'
 
-export default function MenuM(props: {ancherId: number}) {
+export default function CardMenu(props: {ancherId: number}) {
   const { ancherId } = props
   const ancher = document.getElementById(`cardMenu${ancherId}`)
   const dispatch = useAppDispatch()

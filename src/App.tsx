@@ -2,8 +2,8 @@ import React from 'react'
 import { Grid, Box } from '@mui/material'
 import { useAppSelector } from './app/hooks'
 import { darkMode } from './features/layoutSlice'
-import PaperM from './components/paper'
-import NavbarM from './components/navbar'
+import PaperM from './components/paperM'
+import NavbarM from './components/navbar/navbar'
 
 function App() {
   const dark = useAppSelector(darkMode)
