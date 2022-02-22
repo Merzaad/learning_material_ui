@@ -4,7 +4,7 @@ import Mcard from './card'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
 
-export default function Mpaper() {
+export default function PaperM() {
   const dark = useAppSelector(darkMode)
   return (
     <Paper
@@ -16,10 +16,10 @@ export default function Mpaper() {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Mcard />
+          <Mcard cardId={1} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mcard />
+          <Mcard cardId={2} />
         </Grid>
       </Grid>
     </Paper>

@@ -3,7 +3,7 @@ import { Container, Switch } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { darkMode, toggleDarkMode } from '../features/layoutSlice'
 
-export default function Navbar() {
+export default function NavbarM() {
   const dispatch = useAppDispatch()
   const dark = useAppSelector(darkMode)
   const toggleDark = (): void => {

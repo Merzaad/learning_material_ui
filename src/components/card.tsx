@@ -3,10 +3,17 @@ import {
   Card, CardHeader, CardContent, IconButton, Tooltip,
 } from '@mui/material'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
-import { useAppSelector } from '../app/hooks'
-import { darkMode } from '../features/layoutSlice'
+import { useAppDispatch, useAppSelector } from '../app/hooks'
+import { darkMode, toggleCardMenu, cardMenu } from '../features/layoutSlice'
+import MenuM from './menu'
 
-export default function Mcard() {
+export default function CardM(props: {cardId: number}) {
+  const { cardId } = props
+  const dispatch = useAppDispatch()
+  const open = (): void => {
+    dispatch(toggleCardMenu(cardId))
+  }
+  const isOpen = useAppSelector(cardMenu)
   const dark = useAppSelector(darkMode)
   return (
     <Card
@@ -16,19 +23,26 @@ export default function Mcard() {
       }}
     >
       <CardHeader
-        title="CardTtile"
+        title={`cardItem${cardId}`}
         action={(
           <Tooltip title="tooltip">
             <IconButton
               sx={{
                 color: dark ? '#E0DDAA' : '#141E27',
               }}
+              onClick={open}
+              id={`cardMenu${cardId}`}
+              aria-controls={isOpen ? 'basic-menu' : undefined}
             >
               <MoreHorizIcon />
             </IconButton>
           </Tooltip>
         )}
+        sx={{
+          position: 'relative',
+        }}
       />
+      <MenuM ancherId={cardId} />
       <CardContent>
         Using this approach in production is discouraged though
         - the client has to download the entire library, regardless

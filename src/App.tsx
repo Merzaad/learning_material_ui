@@ -1,9 +1,9 @@
 import React from 'react'
 import { Grid, Box } from '@mui/material'
-import Mpaper from './components/paper'
-import Navbar from './components/navbar'
 import { useAppSelector } from './app/hooks'
 import { darkMode } from './features/layoutSlice'
+import PaperM from './components/paper'
+import NavbarM from './components/navbar'
 
 function App() {
   const dark = useAppSelector(darkMode)
@@ -17,19 +17,19 @@ function App() {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
-          <Navbar />
+          <NavbarM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mpaper />
+          <PaperM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mpaper />
+          <PaperM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mpaper />
+          <PaperM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mpaper />
+          <PaperM />
         </Grid>
       </Grid>
     </Box>
