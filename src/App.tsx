@@ -2,8 +2,10 @@ import React from 'react'
 import { Grid, Box } from '@mui/material'
 import { useAppSelector } from './app/hooks'
 import { darkMode } from './features/layoutSlice'
-import PaperM from './components/paperM'
+import PaperTL from './components/paperTL'
 import NavbarM from './components/navbar/navbar'
+import PaperM from './components/paperM'
+import PaperTR from './components/paperTR'
 
 function App() {
   const dark = useAppSelector(darkMode)
@@ -12,7 +14,7 @@ function App() {
       sx={{
         padding: '20px',
         background: dark ? '#222831' : '#EEEEEE',
-        height: '100vh',
+        height: '200vh',
       }}
     >
       <Grid container spacing={2}>
@@ -20,16 +22,19 @@ function App() {
           <NavbarM />
         </Grid>
         <Grid item xs={12} md={6}>
+          <PaperTL />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <PaperTR />
+        </Grid>
+        <Grid item xs={12} md={12}>
           <PaperM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperM />
+          <PaperTL />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperM />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <PaperM />
+          <PaperTL />
         </Grid>
       </Grid>
     </Box>
