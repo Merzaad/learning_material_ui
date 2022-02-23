@@ -8,6 +8,7 @@ import Paper3 from './components/paper3'
 import Paper4 from './components/paper4'
 import Paper5 from './components/paper5'
 import Paper6 from './components/paper6'
+import Paper7 from './components/paper7'
 
 import SpeedDialM from './components/speedDial/speedDial'
 import NavbarM from './components/navbar/navbar'
@@ -42,6 +43,9 @@ function App() {
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper6 />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper7 />
         </Grid>
       </Grid>
       <SpeedDialM />

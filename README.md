@@ -47,3 +47,5 @@ to do:
 - theme color state
 - https://mui.com/components/transitions/
 - navbar
+- https://mui.com/components/drawers/
+- https://mui.com/components/modal/

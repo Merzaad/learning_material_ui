@@ -38,13 +38,13 @@ export default function StepperM(props: {stepperId: number}) {
   const stepper = useAppSelector(stepperActive)
   const activeStep = stepper[stepperId]
   const dispatch = useAppDispatch()
-  const next = (): void => {
+  const handleNext = (): void => {
     dispatch(setStepper({ target: stepperId, value: activeStep + 1 }))
   }
-  const back = (): void => {
+  const handleBack = (): void => {
     dispatch(setStepper({ target: stepperId, value: activeStep - 1 }))
   }
-  const reset = (): void => {
+  const handleReset = (): void => {
     dispatch(setStepper({ target: stepperId, value: 0 }))
   }
   return (
@@ -76,7 +76,7 @@ export default function StepperM(props: {stepperId: number}) {
               </Typography>
               <Box>
                 <Button
-                  onClick={next}
+                  onClick={handleNext}
                   sx={{
                     color: dark ? '#E0DDAA' : '#141E27',
                   }}
@@ -85,7 +85,7 @@ export default function StepperM(props: {stepperId: number}) {
                 </Button>
                 <Button
                   disabled={step.id === 0}
-                  onClick={back}
+                  onClick={handleBack}
                   sx={{
                     color: dark ? '#E0DDAA' : '#141E27',
                   }}
@@ -112,7 +112,7 @@ export default function StepperM(props: {stepperId: number}) {
             All steps completed - you&apos;re finished
           </Typography>
           <Button
-            onClick={reset}
+            onClick={handleReset}
             sx={{
               color: dark ? '#E0DDAA' : '#141E27',
             }}
