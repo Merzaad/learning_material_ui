@@ -37,7 +37,13 @@ export default function TabM(props:{tabId:number}) {
                 color: dark ? '#E0DDAA' : '#141E27',
               }}
             />
-            <Tab label="Item 1" value="1" />
+            <Tab
+              label="Item 0"
+              value="1"
+              sx={{
+                color: dark ? '#E0DDAA' : '#141E27',
+              }}
+            />
           </TabList>
         </Box>
         <TabPanel

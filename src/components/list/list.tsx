@@ -55,7 +55,7 @@ export default function ListM() {
           />
         </ListItem>
       ))}
-      <Divider variant="inset" component="li" />
+      <Divider variant="middle" />
     </List>
   )
 }
