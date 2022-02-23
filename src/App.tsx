@@ -7,6 +7,8 @@ import NavbarM from './components/navbar/navbar'
 import PaperM from './components/paperM'
 import PaperTR from './components/paperTR'
 import PaperBL from './components/paperBL'
+import PaperBR from './components/paperBR'
+import SpeedDialM from './components/speedDial/speedDial'
 
 function App() {
   const dark = useAppSelector(darkMode)
@@ -34,9 +36,10 @@ function App() {
           <PaperBL />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperTL />
+          <PaperBR />
         </Grid>
       </Grid>
+      <SpeedDialM />
     </div>
   )
 }

@@ -5,12 +5,14 @@ export interface LayoutState {
   darkMode: boolean
   cardMenu: boolean[]
   accordionDrop: boolean[]
+  stepperActive: number[]
 }
 
 const initialState: LayoutState = {
   darkMode: !!(localStorage.getItem('darkMode') === 'true'),
   cardMenu: [false, false, false, false],
   accordionDrop: [false, false, false, false],
+  stepperActive: [0],
 }
 
 export const layoutSlice = createSlice({
@@ -32,13 +34,21 @@ export const layoutSlice = createSlice({
       const id = action.payload
       x.accordionDrop[id] = !x.accordionDrop[id]
     },
+    setStepper: (state, action: PayloadAction<{target: number, value: number}>) => {
+      const x = state
+      const id = action.payload.target
+      x.stepperActive[id] = action.payload.value
+    },
   },
 })
 
 export const darkMode = (state: RootState) => state.layout.darkMode
 export const cardMenu = (state: RootState) => state.layout.cardMenu
 export const accordionDrop = (state: RootState) => state.layout.accordionDrop
+export const stepperActive = (state: RootState) => state.layout.stepperActive
 
-export const { toggleDarkMode, toggleCardMenu, toggleAccordion } = layoutSlice.actions
+export const {
+  toggleDarkMode, toggleCardMenu, toggleAccordion, setStepper,
+} = layoutSlice.actions
 
 export default layoutSlice.reducer
