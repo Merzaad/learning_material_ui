@@ -33,7 +33,8 @@ export default function AccodrionM(props: {accordionId: number}) {
           />
 )}
       >
-        AccordionSummary
+
+        {`AccordionSummary${accordionId}`}
       </AccordionSummary>
       <AccordionDetails>
         Using this approach in production is discouraged though - the
