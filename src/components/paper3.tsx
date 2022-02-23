@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Paper } from '@mui/material'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
-import StepperM from './stepper/stepper'
+import MdataGrid from './dataGrid/dataGrid'
 
-export default function PaperBR() {
+export default function Paper3() {
   const dark = useAppSelector(darkMode)
   return (
     <Paper
@@ -14,7 +14,7 @@ export default function PaperBR() {
         background: dark ? '#203239' : '#D1D1D1',
       }}
     >
-      <StepperM stepperId={0} />
+      <MdataGrid />
     </Paper>
   )
 }

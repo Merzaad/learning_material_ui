@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Paper } from '@mui/material'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
-import AccordionM from './accordion/accordion'
+import ListM from './list/list'
 
-export default function PaperBL() {
+export default function Paper5() {
   const dark = useAppSelector(darkMode)
   return (
     <Paper
@@ -14,11 +14,7 @@ export default function PaperBL() {
         background: dark ? '#203239' : '#D1D1D1',
       }}
     >
-      <AccordionM accordionId={0} />
-      <AccordionM accordionId={1} />
-      <AccordionM accordionId={2} />
-      <AccordionM accordionId={3} />
-
+      <ListM />
     </Paper>
   )
 }

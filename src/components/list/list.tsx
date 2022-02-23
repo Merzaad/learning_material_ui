@@ -11,10 +11,12 @@ import { darkMode } from '../../features/layoutSlice'
 
 const items = [
   {
+    id: 0,
     primary: 'Item0',
     secondary: 'to Scott, Alex, Jennifer  — Wish I could come, but I\'m out of town this',
   },
   {
+    id: 1,
     primary: 'Item1',
     secondary: 'to Scott, Alex, Jennifer  — Wish I could come, but I\'m out of town this',
   },
@@ -30,7 +32,10 @@ export default function ListM() {
       }}
     >
       {items.map((item) => (
-        <ListItem alignItems="flex-start">
+        <ListItem
+          alignItems="flex-start"
+          key={item.id}
+        >
           <ListItemAvatar>
             <Avatar />
           </ListItemAvatar>

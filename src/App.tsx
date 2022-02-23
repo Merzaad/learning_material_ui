@@ -2,13 +2,13 @@ import React from 'react'
 import { Grid } from '@mui/material'
 import { useAppSelector } from './app/hooks'
 import { darkMode } from './features/layoutSlice'
-import PaperTL from './components/paperTL'
-import NavbarM from './components/navbar/navbar'
-import PaperM from './components/paperM'
-import PaperTR from './components/paperTR'
-import PaperBL from './components/paperBL'
-import PaperBR from './components/paperBR'
+import Paper1 from './components/paper1'
+import Paper2 from './components/paper2'
+import Paper3 from './components/paper3'
+import Paper4 from './components/paper4'
+import Paper5 from './components/paper5'
 import SpeedDialM from './components/speedDial/speedDial'
+import NavbarM from './components/navbar/navbar'
 
 function App() {
   const dark = useAppSelector(darkMode)
@@ -24,19 +24,19 @@ function App() {
           <NavbarM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperTL />
+          <Paper5 />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperTR />
-        </Grid>
-        <Grid item xs={12} md={12}>
-          <PaperM />
+          <Paper4 />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperBL />
+          <Paper2 />
         </Grid>
         <Grid item xs={12} md={6}>
-          <PaperBR />
+          <Paper1 />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper3 />
         </Grid>
       </Grid>
       <SpeedDialM />

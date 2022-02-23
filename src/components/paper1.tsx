@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Paper } from '@mui/material'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
-import MdataGrid from './dataGrid/dataGrid'
+import AccordionM from './accordion/accordion'
 
-export default function PaperM() {
+export default function Paper1() {
   const dark = useAppSelector(darkMode)
   return (
     <Paper
@@ -14,7 +14,11 @@ export default function PaperM() {
         background: dark ? '#203239' : '#D1D1D1',
       }}
     >
-      <MdataGrid />
+      <AccordionM accordionId={0} />
+      <AccordionM accordionId={1} />
+      <AccordionM accordionId={2} />
+      <AccordionM accordionId={3} />
+
     </Paper>
   )
 }

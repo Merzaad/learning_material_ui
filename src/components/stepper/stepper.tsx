@@ -10,17 +10,20 @@ import { setStepper, stepperActive, darkMode } from '../../features/layoutSlice'
 
 const steps = [
   {
+    id: 0,
     label: 'Select campaign settings',
     description: `For each ad campaign that you create, you can control how much
               you're willing to spend on clicks and conversions, which networks
               and geographical locations you want your ads to show on, and more.`,
   },
   {
+    id: 1,
     label: 'Create an ad group',
     description:
       'An ad group contains one or more ads which target a shared set of keywords.',
   },
   {
+    id: 2,
     label: 'Create an ad',
     description: `Try out different ad text to see what brings in the most customers,
               and learn how to enhance your ads using features like ad extensions.
@@ -52,7 +55,7 @@ export default function StepperM(props: {stepperId: number}) {
       }}
     >
       <Stepper activeStep={activeStep} orientation="vertical">
-        {steps.map((step, index) => (
+        {steps.map((step) => (
           <Step key={step.label}>
             <StepLabel>
               <Typography
@@ -78,10 +81,10 @@ export default function StepperM(props: {stepperId: number}) {
                     color: dark ? '#E0DDAA' : '#141E27',
                   }}
                 >
-                  {index === steps.length - 1 ? 'Finish' : 'Continue'}
+                  {step.id === steps.length - 1 ? 'Finish' : 'Continue'}
                 </Button>
                 <Button
-                  disabled={index === 0}
+                  disabled={step.id === 0}
                   onClick={back}
                   sx={{
                     color: dark ? '#E0DDAA' : '#141E27',

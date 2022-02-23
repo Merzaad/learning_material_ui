@@ -4,7 +4,7 @@ import Mcard from './card/card'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
 
-export default function PaperTL() {
+export default function Paper4() {
   const dark = useAppSelector(darkMode)
   return (
     <Paper

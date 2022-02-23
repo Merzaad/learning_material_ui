@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Paper } from '@mui/material'
 import { useAppSelector } from '../app/hooks'
 import { darkMode } from '../features/layoutSlice'
-import ListM from './list/list'
+import StepperM from './stepper/stepper'
 
-export default function PaperTR() {
+export default function Paper2() {
   const dark = useAppSelector(darkMode)
   return (
     <Paper
@@ -14,7 +14,7 @@ export default function PaperTR() {
         background: dark ? '#203239' : '#D1D1D1',
       }}
     >
-      <ListM />
+      <StepperM stepperId={0} />
     </Paper>
   )
 }
