@@ -7,7 +7,7 @@ import { useAppSelector } from '../../app/hooks'
 import { darkMode } from '../../features/layoutSlice'
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 90 },
+  { field: 'id', headerName: 'ID', width: 20 },
   {
     field: 'firstName',
     headerName: 'First name',
@@ -24,7 +24,7 @@ const columns: GridColDef[] = [
     field: 'age',
     headerName: 'Age',
     type: 'number',
-    width: 110,
+    width: 2,
     editable: true,
   },
   {

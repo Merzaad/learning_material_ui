@@ -25,7 +25,13 @@ export default function AccodrionM(props: {accordionId: number}) {
       }}
     >
       <AccordionSummary
-        expandIcon={<MoreHorizIcon />}
+        expandIcon={(
+          <MoreHorizIcon
+            sx={{
+              color: dark ? '#E0DDAA' : '#141E27',
+            }}
+          />
+)}
       >
         AccordionSummary
       </AccordionSummary>
