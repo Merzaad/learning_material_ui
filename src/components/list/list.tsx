@@ -6,8 +6,7 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
-import { useAppSelector } from '../../app/hooks'
-import { darkMode } from '../../features/layoutSlice'
+import themeMaker from '../../features/themeMaker'
 
 const items = [
   {
@@ -23,12 +22,12 @@ const items = [
 ]
 
 export default function ListM() {
-  const dark = useAppSelector(darkMode)
+  const { bgColor, txtColor } = themeMaker()
   return (
     <List
       sx={{
-        background: dark ? '#141E27' : '#E0DDAA',
-        color: dark ? '#E0DDAA' : '#141E27',
+        background: bgColor,
+        color: txtColor,
       }}
     >
 
@@ -43,7 +42,7 @@ export default function ListM() {
           <ListItemText
             primary={item.primary}
             sx={{
-              color: dark ? '#E0DDAA' : '#141E27',
+              color: txtColor,
             }}
             secondary={(
               <Typography

@@ -56,7 +56,8 @@ export const layoutSlice = createSlice({
   },
 })
 
-export const darkMode = (state: RootState) => state.layout.darkMode
+export const selectDarkMode = (state: RootState) => state.layout.darkMode
+
 export const cardMenu = (state: RootState) => state.layout.cardMenu
 export const accordionDrop = (state: RootState) => state.layout.accordionDrop
 export const stepperActive = (state: RootState) => state.layout.stepperActive

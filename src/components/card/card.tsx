@@ -5,23 +5,25 @@ import {
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import ShareIcon from '@mui/icons-material/Share'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { darkMode, toggleCardMenu } from '../../features/layoutSlice'
+import { useAppDispatch } from '../../app/hooks'
+import { toggleCardMenu } from '../../features/layoutSlice'
 import CardMenu from './cardMenu'
+import themeMaker from '../../features/themeMaker'
 
 export default function CardM(props: {cardId: number}) {
   const { cardId } = props
+  const { bgColor, txtColor } = themeMaker()
   const dispatch = useAppDispatch()
+
   const open = (): void => {
     dispatch(toggleCardMenu(cardId))
   }
-  const dark = useAppSelector(darkMode)
   return (
     <Card
       key={cardId}
       sx={{
-        background: dark ? '#141E27' : '#E0DDAA',
-        color: dark ? '#E0DDAA' : '#141E27',
+        background: bgColor,
+        color: txtColor,
       }}
     >
       <CardHeader
@@ -30,7 +32,7 @@ export default function CardM(props: {cardId: number}) {
           <Tooltip title="tooltip" placement="top">
             <IconButton
               sx={{
-                color: dark ? '#E0DDAA' : '#141E27',
+                color: txtColor,
               }}
               onClick={open}
               id={`cardMenu${cardId}`}
@@ -58,14 +60,14 @@ export default function CardM(props: {cardId: number}) {
         <IconButton>
           <FavoriteIcon
             sx={{
-              color: dark ? '#E0DDAA' : '#141E27',
+              color: txtColor,
             }}
           />
         </IconButton>
         <IconButton>
           <ShareIcon
             sx={{
-              color: dark ? '#E0DDAA' : '#141E27',
+              color: txtColor,
             }}
           />
         </IconButton>

@@ -1,18 +1,19 @@
 import * as React from 'react'
 import { Container, Switch } from '@mui/material'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { darkMode, toggleDarkMode } from '../../features/layoutSlice'
+import { selectDarkMode, toggleDarkMode } from '../../features/layoutSlice'
 
 export default function NavbarM() {
   const dispatch = useAppDispatch()
-  const dark = useAppSelector(darkMode)
+  const darkMode = useAppSelector(selectDarkMode)
+
   const toggleDark = (): void => {
     dispatch(toggleDarkMode())
   }
   return (
     <Container>
       <Switch
-        checked={dark}
+        checked={darkMode}
         onChange={toggleDark}
         color="default"
       />

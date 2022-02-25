@@ -6,7 +6,8 @@ import {
 } from '@mui/material'
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { setStepper, stepperActive, darkMode } from '../../features/layoutSlice'
+import { setStepper, stepperActive } from '../../features/layoutSlice'
+import themeMaker from '../../features/themeMaker'
 
 const steps = [
   {
@@ -33,7 +34,7 @@ const steps = [
 ]
 
 export default function StepperM(props: {stepperId: number}) {
-  const dark = useAppSelector(darkMode)
+  const { bgColor, txtColor } = themeMaker()
   const { stepperId } = props
   const stepper = useAppSelector(stepperActive)
   const activeStep = stepper[stepperId]
@@ -51,7 +52,7 @@ export default function StepperM(props: {stepperId: number}) {
     <Box
       sx={{
         padding: '10px',
-        background: dark ? '#141E27' : '#E0DDAA',
+        background: bgColor,
       }}
     >
       <Stepper activeStep={activeStep} orientation="vertical">
@@ -60,7 +61,7 @@ export default function StepperM(props: {stepperId: number}) {
             <StepLabel>
               <Typography
                 sx={{
-                  color: dark ? '#E0DDAA' : '#141E27',
+                  color: txtColor,
                 }}
               >
                 {step.label}
@@ -69,7 +70,7 @@ export default function StepperM(props: {stepperId: number}) {
             <StepContent>
               <Typography
                 sx={{
-                  color: dark ? '#E0DDAA' : '#141E27',
+                  color: txtColor,
                 }}
               >
                 {step.description}
@@ -78,7 +79,7 @@ export default function StepperM(props: {stepperId: number}) {
                 <Button
                   onClick={handleNext}
                   sx={{
-                    color: dark ? '#E0DDAA' : '#141E27',
+                    color: txtColor,
                   }}
                 >
                   {step.id === steps.length - 1 ? 'Finish' : 'Continue'}
@@ -87,7 +88,7 @@ export default function StepperM(props: {stepperId: number}) {
                   disabled={step.id === 0}
                   onClick={handleBack}
                   sx={{
-                    color: dark ? '#E0DDAA' : '#141E27',
+                    color: txtColor,
                   }}
                 >
                   Back
@@ -101,12 +102,12 @@ export default function StepperM(props: {stepperId: number}) {
         <Paper
           sx={{
             padding: '10px',
-            background: dark ? '#203239' : '#D1D1D1',
+            background: bgColor,
           }}
         >
           <Typography
             sx={{
-              color: dark ? '#E0DDAA' : '#141E27',
+              color: txtColor,
             }}
           >
             All steps completed - you&apos;re finished
@@ -114,7 +115,7 @@ export default function StepperM(props: {stepperId: number}) {
           <Button
             onClick={handleReset}
             sx={{
-              color: dark ? '#E0DDAA' : '#141E27',
+              color: txtColor,
             }}
           >
             Reset

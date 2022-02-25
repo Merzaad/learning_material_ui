@@ -3,8 +3,7 @@ import {
   Box,
 } from '@mui/material'
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
-import { useAppSelector } from '../../app/hooks'
-import { darkMode } from '../../features/layoutSlice'
+import themeMaker from '../../features/themeMaker'
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 20 },
@@ -69,7 +68,8 @@ const rows = [
 ]
 
 export default function MdataGrid() {
-  const dark = useAppSelector(darkMode)
+  const { bgColor, txtColor } = themeMaker()
+
   return (
     <Box>
       <DataGrid
@@ -81,8 +81,8 @@ export default function MdataGrid() {
         checkboxSelection
         disableSelectionOnClick
         sx={{
-          background: dark ? '#141E27' : '#E0DDAA',
-          color: dark ? '#E0DDAA' : '#141E27',
+          background: bgColor,
+          color: txtColor,
         }}
       />
     </Box>

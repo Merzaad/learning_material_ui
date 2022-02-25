@@ -1,7 +1,6 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import { useAppSelector } from './app/hooks'
-import { darkMode } from './features/layoutSlice'
+import themeMaker from './features/themeMaker'
 import Paper1 from './components/paper1'
 import Paper2 from './components/paper2'
 import Paper3 from './components/paper3'
@@ -14,12 +13,12 @@ import SpeedDialM from './components/speedDial/speedDial'
 import NavbarM from './components/navbar/navbar'
 
 function App() {
-  const dark = useAppSelector(darkMode)
+  const { bgColor } = themeMaker()
   return (
     <div
       style={{
         padding: '20px',
-        background: dark ? '#222831' : '#EEEEEE',
+        background: bgColor,
       }}
     >
       <Grid container spacing={2}>

@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { Paper, Grid } from '@mui/material'
 import Mcard from './card/card'
-import { useAppSelector } from '../app/hooks'
-import { darkMode } from '../features/layoutSlice'
+import themeMaker from '../features/themeMaker'
 
 export default function Paper4() {
-  const dark = useAppSelector(darkMode)
+  const { paperColor } = themeMaker()
   return (
     <Paper
       elevation={5}
       sx={{
         padding: '10px',
-        background: dark ? '#203239' : '#D1D1D1',
+        background: paperColor,
       }}
     >
       <Grid container spacing={2}>

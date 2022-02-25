@@ -4,31 +4,34 @@ import {
 } from '@mui/material'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { toggleAccordion, accordionDrop, darkMode } from '../../features/layoutSlice'
+import themeMaker from '../../features/themeMaker'
+import {
+  toggleAccordion, accordionDrop,
+} from '../../features/layoutSlice'
 
 export default function AccodrionM(props: {accordionId: number}) {
   const { accordionId } = props
   const dispatch = useAppDispatch()
-  const expanded = useAppSelector(accordionDrop)[accordionId]
-  const dark = useAppSelector(darkMode)
+  const expandedAccordion = useAppSelector(accordionDrop)[accordionId]
   const open = (): void => {
     dispatch(toggleAccordion(accordionId))
   }
+  const { bgColor, txtColor } = themeMaker()
 
   return (
     <Accordion
-      expanded={expanded}
+      expanded={expandedAccordion}
       onChange={open}
       sx={{
-        background: dark ? '#141E27' : '#E0DDAA',
-        color: dark ? '#E0DDAA' : '#141E27',
+        background: bgColor,
+        color: txtColor,
       }}
     >
       <AccordionSummary
         expandIcon={(
           <MoreHorizIcon
             sx={{
-              color: dark ? '#E0DDAA' : '#141E27',
+              color: txtColor,
             }}
           />
 )}

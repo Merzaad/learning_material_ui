@@ -5,11 +5,12 @@ import {
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { darkMode, snackbarOpen, toggleSnackbar } from '../../features/layoutSlice'
+import { snackbarOpen, toggleSnackbar } from '../../features/layoutSlice'
+import themeMaker from '../../features/themeMaker'
 
 export default function SnackbarM(props:{snackbarId: number}) {
   const { snackbarId } = props
-  const dark = useAppSelector(darkMode)
+  const { bgColor, txtColor } = themeMaker()
   const open = useAppSelector(snackbarOpen)[snackbarId]
   const dispatch = useAppDispatch()
 
@@ -38,11 +39,11 @@ export default function SnackbarM(props:{snackbarId: number}) {
       <Button
         variant="contained"
         sx={{
-          color: dark ? '#141E27' : '#E0DDAA',
-          background: dark ? '#E0DDAA' : '#141E27',
+          color: txtColor,
+          background: bgColor,
           ':hover': {
-            background: dark ? '#141E27' : '#E0DDAA',
-            color: dark ? '#E0DDAA' : '#141E27',
+            background: bgColor,
+            color: txtColor,
           },
         }}
         onClick={handleClick}

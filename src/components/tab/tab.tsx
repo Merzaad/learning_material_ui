@@ -4,13 +4,14 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { tabAcive, setTab, darkMode } from '../../features/layoutSlice'
+import { tabAcive, setTab } from '../../features/layoutSlice'
+import themeMaker from '../../features/themeMaker'
 
 export default function TabM(props:{tabId:number}) {
   const { tabId } = props
   const dipatch = useAppDispatch()
   const activeTab = useAppSelector(tabAcive)
-  const dark = useAppSelector(darkMode)
+  const { bgColor, txtColor } = themeMaker()
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     dipatch(setTab({ target: tabId, value: newValue }))
@@ -21,7 +22,7 @@ export default function TabM(props:{tabId:number}) {
       sx={{
         width: '100%',
         typography: 'body1',
-        color: dark ? '#E0DDAA' : '#141E27',
+        color: txtColor,
 
       }}
     >
@@ -34,14 +35,14 @@ export default function TabM(props:{tabId:number}) {
               label={`Tab ${tabId} Item 1`}
               value="0"
               sx={{
-                color: dark ? '#E0DDAA' : '#141E27',
+                color: txtColor,
               }}
             />
             <Tab
               label={`Tab ${tabId} Item 2`}
               value="1"
               sx={{
-                color: dark ? '#E0DDAA' : '#141E27',
+                color: txtColor,
               }}
             />
           </TabList>
@@ -49,7 +50,7 @@ export default function TabM(props:{tabId:number}) {
         <TabPanel
           value="0"
           sx={{
-            background: dark ? '#141E27' : '#E0DDAA',
+            background: bgColor,
           }}
         >
           MUI provides a simple, customizable, and accessible library of React
@@ -58,7 +59,7 @@ export default function TabM(props:{tabId:number}) {
         <TabPanel
           value="1"
           sx={{
-            background: dark ? '#141E27' : '#E0DDAA',
+            background: bgColor,
           }}
         >
           What is material UI for?
