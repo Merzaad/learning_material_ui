@@ -3,7 +3,7 @@ import { RootState } from '../app/store'
 
 export interface LayoutState {
   darkMode: boolean
-  cardMenu: boolean[]
+  cardMenuOpen: boolean[]
   accordionDrop: boolean[]
   stepperActive: number[]
   tabActive: string[]
@@ -12,7 +12,7 @@ export interface LayoutState {
 
 const initialState: LayoutState = {
   darkMode: !!(localStorage.getItem('darkMode') === 'true'),
-  cardMenu: [false, false, false, false],
+  cardMenuOpen: [false, false, false, false],
   accordionDrop: [false, false, false, false],
   stepperActive: [0],
   tabActive: ['0'],
@@ -31,7 +31,7 @@ export const layoutSlice = createSlice({
     toggleCardMenu: (state, action: PayloadAction<number>) => {
       const x = state
       const id = action.payload
-      x.cardMenu[id] = !x.cardMenu[id]
+      x.cardMenuOpen[id] = !x.cardMenuOpen[id]
     },
     toggleAccordion: (state, action: PayloadAction<number>) => {
       const x = state
@@ -57,8 +57,7 @@ export const layoutSlice = createSlice({
 })
 
 export const selectDarkMode = (state: RootState) => state.layout.darkMode
-
-export const cardMenu = (state: RootState) => state.layout.cardMenu
+export const cardMenuOpen = (state: RootState) => state.layout.cardMenuOpen
 export const accordionDrop = (state: RootState) => state.layout.accordionDrop
 export const stepperActive = (state: RootState) => state.layout.stepperActive
 export const tabAcive = (state: RootState) => state.layout.tabActive

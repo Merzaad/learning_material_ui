@@ -22,7 +22,6 @@ export default function SnackbarM(props:{snackbarId: number}) {
     if (reason === 'clickaway') {
       return
     }
-
     dispatch(toggleSnackbar({ target: snackbarId, value: false }))
   }
 

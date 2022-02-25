@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import themeMaker from './features/themeMaker'
 import Paper1 from './components/paper1'
 import Paper2 from './components/paper2'
 import Paper3 from './components/paper3'
@@ -11,14 +10,15 @@ import Paper7 from './components/paper7'
 
 import SpeedDialM from './components/speedDial/speedDial'
 import NavbarM from './components/navbar/navbar'
+import themeMaker from './features/themeMaker'
 
 function App() {
-  const { bgColor } = themeMaker()
+  const { appColor } = themeMaker()
   return (
     <div
       style={{
         padding: '20px',
-        background: bgColor,
+        background: appColor,
       }}
     >
       <Grid container spacing={2}>

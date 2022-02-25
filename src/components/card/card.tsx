@@ -35,7 +35,7 @@ export default function CardM(props: {cardId: number}) {
                 color: txtColor,
               }}
               onClick={open}
-              id={`cardMenu${cardId}`}
+              id={`card${cardId}`}
             >
               <MoreHorizIcon />
             </IconButton>
