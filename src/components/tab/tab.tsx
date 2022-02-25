@@ -31,14 +31,14 @@ export default function TabM(props:{tabId:number}) {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <TabList onChange={handleChange}>
             <Tab
-              label="Item 0"
+              label={`Tab ${tabId} Item 1`}
               value="0"
               sx={{
                 color: dark ? '#E0DDAA' : '#141E27',
               }}
             />
             <Tab
-              label="Item 0"
+              label={`Tab ${tabId} Item 2`}
               value="1"
               sx={{
                 color: dark ? '#E0DDAA' : '#141E27',

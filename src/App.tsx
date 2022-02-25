@@ -27,7 +27,7 @@ function App() {
           <NavbarM />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper5 />
+          <Paper3 />
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper4 />
@@ -39,7 +39,7 @@ function App() {
           <Paper1 />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Paper3 />
+          <Paper5 />
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper6 />
