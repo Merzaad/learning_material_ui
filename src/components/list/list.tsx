@@ -12,12 +12,12 @@ import { darkMode } from '../../features/layoutSlice'
 const items = [
   {
     id: 0,
-    primary: 'Item0',
+    primary: 'List Item0',
     secondary: 'to Scott, Alex, Jennifer  — Wish I could come, but I\'m out of town this',
   },
   {
     id: 1,
-    primary: 'Item1',
+    primary: 'List Item1',
     secondary: 'to Scott, Alex, Jennifer  — Wish I could come, but I\'m out of town this',
   },
 ]
