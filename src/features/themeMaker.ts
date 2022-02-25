@@ -3,10 +3,10 @@ import { useAppSelector } from '../app/hooks'
 
 const themeMaker = () => {
   const darkMode = useAppSelector(selectDarkMode)
-  const bgColor = darkMode ? '#444444' : '#FEFBF3'
-  const txtColor = darkMode ? '#FFD369' : '#393E46'
-  const paperColor = darkMode ? '#323232' : '#C9CCD5'
-  const appColor = darkMode ? '#212121' : '#9D9D9D'
+  const txtColor = darkMode ? '#F4FAC5' : '#1E3440'
+  const bgColor = darkMode ? '#2D2D2D' : '#FEFBF3'
+  const paperColor = darkMode ? '#1D1D1D' : '#B8B8B8'
+  const appColor = darkMode ? '#181818' : '#9D9D9D'
   return {
     bgColor, txtColor, paperColor, appColor,
   }
