@@ -3,13 +3,13 @@ import { Paper } from '@mui/material'
 import themeMaker from '../features/themeMaker'
 import SnackbarM from './snackbar/snackbar'
 
-export default function Paper6() {
+const Paper7 = () => {
   const { paperColor } = themeMaker()
   return (
     <Paper
       elevation={5}
       sx={{
-        padding: '10px',
+        padding: '5px',
         background: paperColor,
       }}
     >
@@ -17,3 +17,4 @@ export default function Paper6() {
     </Paper>
   )
 }
+export default Paper7

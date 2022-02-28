@@ -33,7 +33,7 @@ const steps = [
   },
 ]
 
-export default function StepperM(props: {stepperId: number}) {
+const StepperM = (props: {stepperId: number}) => {
   const { bgColor, txtColor } = themeMaker()
   const { stepperId } = props
   const stepper = useAppSelector(stepperActive)
@@ -125,3 +125,4 @@ export default function StepperM(props: {stepperId: number}) {
     </Box>
   )
 }
+export default StepperM

@@ -10,7 +10,7 @@ import { toggleCardMenu } from '../../features/layoutSlice'
 import CardMenu from './cardMenu'
 import themeMaker from '../../features/themeMaker'
 
-export default function CardM(props: {cardId: number}) {
+const CardM = (props: {cardId: number}) => {
   const { cardId } = props
   const { bgColor, txtColor } = themeMaker()
   const dispatch = useAppDispatch()
@@ -75,3 +75,5 @@ export default function CardM(props: {cardId: number}) {
     </Card>
   )
 }
+
+export default CardM

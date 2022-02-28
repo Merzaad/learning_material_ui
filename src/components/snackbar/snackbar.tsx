@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { snackbarOpen, toggleSnackbar } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
 
-export default function SnackbarM(props:{snackbarId: number}) {
+const SnackbarM = (props:{snackbarId: number}) => {
   const { snackbarId } = props
   const { bgColor, txtColor } = themeMaker()
   const open = useAppSelector(snackbarOpen)[snackbarId]
@@ -59,3 +59,5 @@ export default function SnackbarM(props:{snackbarId: number}) {
     </Box>
   )
 }
+
+export default SnackbarM

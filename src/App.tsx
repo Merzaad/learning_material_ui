@@ -12,7 +12,7 @@ import SpeedDialM from './components/speedDial/speedDial'
 import NavbarM from './components/navbar/navbar'
 import themeMaker from './features/themeMaker'
 
-function App() {
+const App = () => {
   const { appColor } = themeMaker()
   return (
     <div

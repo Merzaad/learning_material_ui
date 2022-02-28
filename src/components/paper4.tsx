@@ -3,13 +3,13 @@ import { Paper, Grid } from '@mui/material'
 import Mcard from './card/card'
 import themeMaker from '../features/themeMaker'
 
-export default function Paper4() {
+const Paper4 = () => {
   const { paperColor } = themeMaker()
   return (
     <Paper
       elevation={5}
       sx={{
-        padding: '10px',
+        padding: '5px',
         background: paperColor,
       }}
     >
@@ -24,3 +24,4 @@ export default function Paper4() {
     </Paper>
   )
 }
+export default Paper4

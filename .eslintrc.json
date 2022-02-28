@@ -18,6 +18,10 @@
       "semi": [2, "never"],
       "max-len": ["error", { "code": 100 }],
       "linebreak-style": "off",
+      "react/function-component-definition": [2, {
+        "namedComponents": "arrow-function" ,
+        "unnamedComponents":  "arrow-function"
+      }],
       "import/extensions": [
         1,
         {

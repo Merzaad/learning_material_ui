@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { tabAcive, setTab } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
 
-export default function TabM(props:{tabId:number}) {
+const TabM = (props:{tabId:number}) => {
   const { tabId } = props
   const dipatch = useAppDispatch()
   const activeTab = useAppSelector(tabAcive)
@@ -71,3 +71,5 @@ export default function TabM(props:{tabId:number}) {
     </Box>
   )
 }
+
+export default TabM

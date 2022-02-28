@@ -11,26 +11,26 @@ const actions = [
   { icon: <ShareIcon />, name: 'Share' },
 ]
 
-export default function SpeedDialM() {
-  return (
-    <Box>
-      <SpeedDial
-        ariaLabel="SpeedDialM"
-        sx={{
-          position: 'fixed',
-          bottom: 10,
-          right: 10,
-        }}
-        icon={<SpeedDialIcon />}
-      >
-        {actions.map((action) => (
-          <SpeedDialAction
-            key={action.name}
-            icon={action.icon}
-            tooltipTitle={action.name}
-          />
-        ))}
-      </SpeedDial>
-    </Box>
-  )
-}
+const SpeedDialM = () => (
+  <Box>
+    <SpeedDial
+      ariaLabel="SpeedDialM"
+      sx={{
+        position: 'fixed',
+        bottom: 10,
+        right: 10,
+      }}
+      icon={<SpeedDialIcon />}
+    >
+      {actions.map((action) => (
+        <SpeedDialAction
+          key={action.name}
+          icon={action.icon}
+          tooltipTitle={action.name}
+        />
+      ))}
+    </SpeedDial>
+  </Box>
+)
+
+export default SpeedDialM

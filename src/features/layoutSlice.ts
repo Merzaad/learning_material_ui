@@ -1,14 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-
-export interface LayoutState {
-  darkMode: boolean
-  cardMenuOpen: boolean[]
-  accordionDrop: boolean[]
-  stepperActive: number[]
-  tabActive: string[]
-  snackbarOpen: boolean[]
-}
+import { LayoutState } from './types'
 
 const initialState: LayoutState = {
   darkMode: !!(localStorage.getItem('darkMode') === 'true'),

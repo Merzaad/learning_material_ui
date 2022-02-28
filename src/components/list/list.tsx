@@ -7,22 +7,11 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import Avatar from '@mui/material/Avatar'
 import Typography from '@mui/material/Typography'
 import themeMaker from '../../features/themeMaker'
+import data from './data'
 
-const items = [
-  {
-    id: 0,
-    primary: 'List Item0',
-    secondary: 'to Scott, Alex, Jennifer  — Wish I could come, but I\'m out of town this',
-  },
-  {
-    id: 1,
-    primary: 'List Item1',
-    secondary: 'to Scott, Alex, Jennifer  — Wish I could come, but I\'m out of town this',
-  },
-]
-
-export default function ListM() {
+const ListM = () => {
   const { bgColor, txtColor } = themeMaker()
+  const items = data()
   return (
     <List
       sx={{
@@ -58,3 +47,5 @@ export default function ListM() {
     </List>
   )
 }
+
+export default ListM

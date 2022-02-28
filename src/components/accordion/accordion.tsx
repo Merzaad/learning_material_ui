@@ -9,7 +9,7 @@ import {
   toggleAccordion, accordionDrop,
 } from '../../features/layoutSlice'
 
-export default function AccodrionM(props: {accordionId: number}) {
+const AccodrionM = (props: {accordionId: number}) => {
   const { accordionId } = props
   const dispatch = useAppDispatch()
   const expandedAccordion = useAppSelector(accordionDrop)[accordionId]
@@ -46,3 +46,5 @@ export default function AccodrionM(props: {accordionId: number}) {
     </Accordion>
   )
 }
+
+export default AccodrionM
