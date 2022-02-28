@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Paper, Grid } from '@mui/material'
-import Mcard from './card/card'
+import CardM from './card/card'
 import themeMaker from '../features/themeMaker'
 
 const Paper4 = () => {
@@ -15,10 +15,10 @@ const Paper4 = () => {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <Mcard cardId={0} />
+          <CardM cardId={0} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <Mcard cardId={1} />
+          <CardM cardId={1} />
         </Grid>
       </Grid>
     </Paper>

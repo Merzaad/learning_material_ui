@@ -5,7 +5,7 @@ import {
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { cardMenuOpen, toggleCardMenu } from '../../features/layoutSlice'
 
-export default function CardMenu(props: {ancherId: number}) {
+const CardMenu = (props: {ancherId: number}) => {
   const { ancherId } = props
   const ancher = document.getElementById(`card${ancherId}`)
   const dispatch = useAppDispatch()
@@ -25,3 +25,4 @@ export default function CardMenu(props: {ancherId: number}) {
     </Menu>
   )
 }
+export default CardMenu

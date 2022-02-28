@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Paper } from '@mui/material'
 import themeMaker from '../features/themeMaker'
-import MdataGrid from './dataGrid/dataGrid'
+import DataGridM from './dataGrid/dataGrid'
 
 const Paper3 = () => {
   const { paperColor } = themeMaker()
@@ -13,7 +13,7 @@ const Paper3 = () => {
         background: paperColor,
       }}
     >
-      <MdataGrid />
+      <DataGridM />
     </Paper>
   )
 }
