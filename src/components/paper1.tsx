@@ -13,10 +13,10 @@ const Paper1 = () => {
         background: paperColor,
       }}
     >
-      <AccordionM accordionId={0} />
-      <AccordionM accordionId={1} />
-      <AccordionM accordionId={2} />
-      <AccordionM accordionId={3} />
+      <AccordionM index={0} />
+      <AccordionM index={1} />
+      <AccordionM index={2} />
+      <AccordionM index={3} />
     </Paper>
   )
 }

@@ -15,10 +15,10 @@ const Paper4 = () => {
     >
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <CardM cardId={0} />
+          <CardM index={0} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <CardM cardId={1} />
+          <CardM index={1} />
         </Grid>
       </Grid>
     </Paper>

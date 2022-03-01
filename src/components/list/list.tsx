@@ -12,6 +12,7 @@ import data from './data'
 const ListM = () => {
   const { bgColor, txtColor } = themeMaker()
   const items = data()
+
   return (
     <List
       sx={{
@@ -19,12 +20,8 @@ const ListM = () => {
         color: txtColor,
       }}
     >
-
       {items.map((item) => (
-        <ListItem
-          alignItems="flex-start"
-          key={item.id}
-        >
+        <ListItem alignItems="flex-start" key={item.id}>
           <ListItemAvatar>
             <Avatar />
           </ListItemAvatar>
@@ -33,13 +30,7 @@ const ListM = () => {
             sx={{
               color: txtColor,
             }}
-            secondary={(
-              <Typography
-                variant="body2"
-              >
-                {item.secondary}
-              </Typography>
-          )}
+            secondary={<Typography variant="body2">{item.secondary}</Typography>}
           />
         </ListItem>
       ))}

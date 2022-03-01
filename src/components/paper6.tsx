@@ -13,7 +13,7 @@ const Paper6 = () => {
         background: paperColor,
       }}
     >
-      <TabM tabId={0} />
+      <TabM index={0} />
     </Paper>
   )
 }

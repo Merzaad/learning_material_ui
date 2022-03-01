@@ -13,7 +13,7 @@ const Paper2 = () => {
         background: paperColor,
       }}
     >
-      <StepperM stepperId={0} />
+      <StepperM index={0} />
     </Paper>
   )
 }

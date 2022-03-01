@@ -13,7 +13,7 @@ const Paper7 = () => {
         background: paperColor,
       }}
     >
-      <SnackbarM snackbarId={0} />
+      <SnackbarM index={0} />
     </Paper>
   )
 }

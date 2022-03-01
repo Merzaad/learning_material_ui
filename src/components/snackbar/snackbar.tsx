@@ -1,34 +1,34 @@
 import * as React from 'react'
 
-import {
-  Box, IconButton, Snackbar, Button,
-} from '@mui/material'
+import { Box, IconButton, Snackbar, Button } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { snackbarOpen, toggleSnackbar } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
 
-const SnackbarM = (props:{snackbarId: number}) => {
-  const { snackbarId } = props
+type snackbar = {
+  index: number
+}
+
+const SnackbarM = (props: snackbar) => {
+  const { index } = props
   const { bgColor, txtColor } = themeMaker()
-  const open = useAppSelector(snackbarOpen)[snackbarId]
+  const isOpen = useAppSelector(snackbarOpen)[index]
   const dispatch = useAppDispatch()
 
   const handleClick = (): void => {
-    dispatch(toggleSnackbar({ target: snackbarId, value: true }))
+    dispatch(toggleSnackbar({ target: index, value: true }))
   }
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string): void => {
     if (reason === 'clickaway') {
       return
     }
-    dispatch(toggleSnackbar({ target: snackbarId, value: false }))
+    dispatch(toggleSnackbar({ target: index, value: false }))
   }
 
   const action = (
-    <IconButton
-      onClick={handleClose}
-    >
+    <IconButton onClick={handleClose}>
       <CloseIcon />
     </IconButton>
   )
@@ -50,7 +50,7 @@ const SnackbarM = (props:{snackbarId: number}) => {
         Snackbar
       </Button>
       <Snackbar
-        open={open}
+        open={isOpen}
         autoHideDuration={6000}
         onClose={handleClose}
         message="Snackbar message"
