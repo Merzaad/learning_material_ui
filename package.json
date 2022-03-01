@@ -1,6 +1,10 @@
 {
   "name": "mui-layout",
   "version": "0.1.0",
+  "engines": {
+    "node": "17.6.0",
+    "npm": "8.5.1"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.1",
