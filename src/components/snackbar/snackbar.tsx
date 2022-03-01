@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import * as React from 'react'
 
 import { Box, IconButton, Snackbar, Button } from '@mui/material'
@@ -5,6 +6,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { snackbarOpen, toggleSnackbar } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
+import testApi from '../../features/testApi'
 
 type snackbar = {
   index: number
@@ -18,6 +20,9 @@ const SnackbarM = (props: snackbar) => {
 
   const handleClick = (): void => {
     dispatch(toggleSnackbar({ target: index, value: true }))
+    testApi()
+      .then((data) => console.log(data))
+      .catch((error) => console.log(`handleClick -> error : ${error}`))
   }
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string): void => {
@@ -47,13 +52,13 @@ const SnackbarM = (props: snackbar) => {
         }}
         onClick={handleClick}
       >
-        Snackbar
+        onClick = console.log(data)
       </Button>
       <Snackbar
         open={isOpen}
         autoHideDuration={6000}
         onClose={handleClose}
-        message="Snackbar message"
+        message="Api called check console"
         action={action}
       />
     </Box>

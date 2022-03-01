@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import * as React from 'react'
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'

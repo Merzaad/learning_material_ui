@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import * as React from 'react'
 import {
   Card,
