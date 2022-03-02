@@ -7,12 +7,12 @@ const navbarM = () => {
   const dispatch = useAppDispatch()
   const darkMode = useAppSelector(selectDarkMode)
 
-  const handleChange = (): void => {
+  const handleDarkMode = (): void => {
     dispatch(toggleDarkMode())
   }
   return (
     <Container>
-      <Switch checked={darkMode} onChange={handleChange} color="default" />
+      <Switch checked={darkMode} onChange={handleDarkMode} color="default" />
     </Container>
   )
 }

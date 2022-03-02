@@ -1,7 +1,14 @@
 import { selectDarkMode } from './layoutSlice'
 import { useAppSelector } from '../app/hooks'
 
-const themeMaker = () => {
+type theme = {
+  bgColor: string,
+  txtColor: string,
+  paperColor: string,
+  appColor: string,
+}
+
+const themeMaker = ():theme => {
   const darkMode = useAppSelector(selectDarkMode)
   const txtColor = darkMode ? '#CA3E47' : '#1E3440'
   const bgColor = darkMode ? '#313131' : '#FEFBF3'

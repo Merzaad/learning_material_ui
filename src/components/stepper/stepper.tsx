@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { setStepper, stepperActive } from '../../features/layoutSlice'
+import { changeStepper, stepperActive } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
 import data from './data'
 
@@ -27,15 +27,15 @@ const StepperM = (props: stepper) => {
   const activeStep = useAppSelector(stepperActive)[index]
 
   const handleNext = (): void => {
-    dispatch(setStepper({ target: index, value: activeStep + 1 }))
+    dispatch(changeStepper({ target: index, value: activeStep + 1 }))
   }
 
   const handleBack = (): void => {
-    dispatch(setStepper({ target: index, value: activeStep - 1 }))
+    dispatch(changeStepper({ target: index, value: activeStep - 1 }))
   }
 
   const handleReset = (): void => {
-    dispatch(setStepper({ target: index, value: 0 }))
+    dispatch(changeStepper({ target: index, value: 0 }))
   }
 
   return (

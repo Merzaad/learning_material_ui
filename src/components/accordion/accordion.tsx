@@ -11,19 +11,19 @@ type accordion = {
 }
 
 const AccodrionM = (props: accordion) => {
-  const dispatch = useAppDispatch()
   const { index } = props
   const { bgColor, txtColor } = themeMaker()
+  const dispatch = useAppDispatch()
   const isExpanded = useAppSelector(accordionDrop)[index]
 
-  const hancleChange = (): void => {
+  const handleDrop = (): void => {
     dispatch(toggleAccordion(index))
   }
 
   return (
     <Accordion
       expanded={isExpanded}
-      onChange={hancleChange}
+      onChange={handleDrop}
       sx={{
         background: bgColor,
         color: txtColor,

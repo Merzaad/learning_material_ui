@@ -26,7 +26,7 @@ const CardM = (props: card) => {
   const { bgColor, txtColor } = themeMaker()
   const dispatch = useAppDispatch()
 
-  const handleClick = (): void => {
+  const handleMenu = (): void => {
     dispatch(toggleCardMenu(index))
   }
 
@@ -46,7 +46,7 @@ const CardM = (props: card) => {
               sx={{
                 color: txtColor,
               }}
-              onClick={handleClick}
+              onClick={handleMenu}
               id={`card${index}`}
             >
               <MoreHorizIcon />

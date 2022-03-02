@@ -15,10 +15,10 @@ type snackbar = {
 const SnackbarM = (props: snackbar) => {
   const { index } = props
   const { bgColor, txtColor } = themeMaker()
-  const isOpen = useAppSelector(snackbarOpen)[index]
   const dispatch = useAppDispatch()
+  const isOpen = useAppSelector(snackbarOpen)[index]
 
-  const handleClick = (): void => {
+  const handleRequest = (): void => {
     dispatch(toggleSnackbar({ target: index, value: true }))
     testApi()
       .then((data) => console.log(data))
@@ -50,9 +50,9 @@ const SnackbarM = (props: snackbar) => {
             color: txtColor,
           },
         }}
-        onClick={handleClick}
+        onClick={handleRequest}
       >
-        onClick = console.log(data)
+        snackbar + testApi
       </Button>
       <Snackbar
         open={isOpen}

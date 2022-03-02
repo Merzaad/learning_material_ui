@@ -4,7 +4,7 @@ import TabContext from '@mui/lab/TabContext'
 import TabList from '@mui/lab/TabList'
 import TabPanel from '@mui/lab/TabPanel'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { tabAcive, setTab } from '../../features/layoutSlice'
+import { tabAcive, changeTab } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
 
 type tab = {
@@ -17,8 +17,8 @@ const TabM = (props: tab) => {
   const activeTab = useAppSelector(tabAcive)
   const { bgColor, txtColor } = themeMaker()
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    dipatch(setTab({ target: index, value: newValue }))
+  const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
+    dipatch(changeTab({ target: index, value: newValue }))
   }
 
   return (
@@ -31,7 +31,7 @@ const TabM = (props: tab) => {
     >
       <TabContext value={activeTab[index]}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange}>
+          <TabList onChange={handleTabChange}>
             <Tab
               label={`Tab ${index} Item 1`}
               value="0"

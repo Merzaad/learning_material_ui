@@ -30,12 +30,12 @@ export const layoutSlice = createSlice({
       const id = action.payload
       x.accordionDrop[id] = !x.accordionDrop[id]
     },
-    setStepper: (state, action: PayloadAction<{target: number, value: number}>) => {
+    changeStepper: (state, action: PayloadAction<{target: number, value: number}>) => {
       const x = state
       const id = action.payload.target
       x.stepperActive[id] = action.payload.value
     },
-    setTab: (state, action: PayloadAction<{target: number, value: string}>) => {
+    changeTab: (state, action: PayloadAction<{target: number, value: string}>) => {
       const x = state
       const id = action.payload.target
       x.tabActive[id] = action.payload.value
@@ -56,7 +56,7 @@ export const tabAcive = (state: RootState) => state.layout.tabActive
 export const snackbarOpen = (state: RootState) => state.layout.snackbarOpen
 
 export const {
-  toggleDarkMode, toggleCardMenu, toggleAccordion, setStepper, setTab, toggleSnackbar,
+  toggleDarkMode, toggleCardMenu, toggleAccordion, changeStepper, changeTab, toggleSnackbar,
 } = layoutSlice.actions
 
 export default layoutSlice.reducer

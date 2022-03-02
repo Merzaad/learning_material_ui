@@ -13,14 +13,14 @@ const MenuM = (props: menu) => {
   const ancher = document.getElementById(`card${index}`)
   const isOpen = useAppSelector(cardMenuOpen)[index]
 
-  const hancleClick = (): void => {
+  const handleMenu = (): void => {
     dispatch(toggleCardMenu(index))
   }
 
   return (
-    <Menu anchorEl={ancher} open={isOpen} onClose={hancleClick} elevation={0}>
-      <MenuItem onClick={hancleClick}>Bookmark</MenuItem>
-      <MenuItem onClick={hancleClick}>Delete</MenuItem>
+    <Menu anchorEl={ancher} open={isOpen} onClose={handleMenu} elevation={0}>
+      <MenuItem onClick={handleMenu}>Bookmark</MenuItem>
+      <MenuItem onClick={handleMenu}>Delete</MenuItem>
     </Menu>
   )
 }
