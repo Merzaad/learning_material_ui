@@ -9,7 +9,6 @@ import Paper6 from './components/paper6'
 import Paper7 from './components/paper7'
 
 import SpeedDialM from './components/speedDial/speedDial'
-import NavbarM from './components/navbar/navbar'
 import themeMaker from './features/themeMaker'
 
 const App = () => {
@@ -19,12 +18,10 @@ const App = () => {
       style={{
         padding: '20px',
         background: appColor,
+        paddingBottom: '100px',
       }}
     >
       <Grid container spacing={2}>
-        <Grid item xs={12} md={12}>
-          <NavbarM />
-        </Grid>
         <Grid item xs={12} md={6}>
           <Paper3 />
         </Grid>

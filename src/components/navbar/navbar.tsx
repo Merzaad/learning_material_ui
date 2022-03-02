@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Container, Switch } from '@mui/material'
+import { Box, Switch } from '@mui/material'
+import { Outlet } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { selectDarkMode, toggleDarkMode } from '../../features/layoutSlice'
 
@@ -11,9 +12,20 @@ const navbarM = () => {
     dispatch(toggleDarkMode())
   }
   return (
-    <Container>
-      <Switch checked={darkMode} onChange={handleDarkMode} color="default" />
-    </Container>
+    <div>
+      <Box
+        sx={{
+          background: 'gray',
+          position: 'fixed',
+          bottom: '0',
+          zIndex: '1',
+          width: '100%',
+        }}
+      >
+        <Switch checked={darkMode} onChange={handleDarkMode} color="default" />
+      </Box>
+      <Outlet />
+    </div>
   )
 }
 export default navbarM
