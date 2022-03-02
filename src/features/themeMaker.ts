@@ -6,6 +6,7 @@ type theme = {
   txtColor: string,
   paperColor: string,
   appColor: string,
+  navColor: string,
 }
 
 const themeMaker = ():theme => {
@@ -14,8 +15,9 @@ const themeMaker = ():theme => {
   const bgColor = darkMode ? '#313131' : '#FEFBF3'
   const paperColor = darkMode ? '#1D1D1D' : '#B8B8B8'
   const appColor = darkMode ? '#181818' : '#9D9D9D'
+  const navColor = darkMode ? '#294546' : '#B4CFB0'
   return {
-    bgColor, txtColor, paperColor, appColor,
+    bgColor, txtColor, paperColor, appColor, navColor,
   }
 }
 export default themeMaker

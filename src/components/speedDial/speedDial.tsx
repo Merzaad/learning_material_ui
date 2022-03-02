@@ -10,16 +10,11 @@ const actions = [
   { icon: <PrintIcon />, name: 'Print' },
   { icon: <ShareIcon />, name: 'Share' },
 ]
-
 const SpeedDialM = () => (
   <Box>
     <SpeedDial
       ariaLabel="SpeedDialM"
-      sx={{
-        position: 'fixed',
-        bottom: 10,
-        right: 10,
-      }}
+      direction="right"
       icon={<SpeedDialIcon />}
     >
       {actions.map((action) => (
