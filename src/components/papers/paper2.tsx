@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Paper } from '@mui/material'
-import themeMaker from '../features/themeMaker'
-import TabM from './tab/tab'
+import themeMaker from '../../features/themeMaker'
+import StepperM from '../stepper/stepper'
 
-const Paper6 = () => {
+const Paper2 = () => {
   const { paperColor } = themeMaker()
   return (
     <Paper
@@ -13,9 +13,8 @@ const Paper6 = () => {
         background: paperColor,
       }}
     >
-      <TabM index={0} />
+      <StepperM index={0} />
     </Paper>
   )
 }
-
-export default Paper6
+export default Paper2

@@ -3,8 +3,8 @@ const testApi = async () => {
     method: 'GET',
   }
   const url = 'https://newsapi.org/v2/top-headlines?'
-  + 'q=Russia&'
-  + 'from=2022-03-02&'
+  + 'q=russia&'
+  + 'from=2022-03-03&'
   + 'sortBy=popularity&'
   + 'apiKey=f1a22ede52574494bd6efba4dc31cd2e'
   const response = await fetch(url, options)

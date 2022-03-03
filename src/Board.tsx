@@ -9,7 +9,7 @@ const Board = () => {
   const { appColor } = themeMaker()
   const testDataBase = useAppSelector(selectTestDataBase)
   const board = testDataBase.map((data) => (
-    <Grid key={data.index} item xs={12} md={3}>
+    <Grid key={data.index} item xs={12} md={6}>
       <CardM data={data} />
     </Grid>
   ))

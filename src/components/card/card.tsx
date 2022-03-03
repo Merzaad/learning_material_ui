@@ -66,7 +66,11 @@ const CardM = (props: cardData) => {
         alt="Card Media Alt"
       />
       <CardMenu index={data.index} />
-      <CardContent>
+      <CardContent
+        sx={{
+          overflow: 'hidden',
+        }}
+      >
         {data ? data.text : 'initialTitle'}
       </CardContent>
       <CardActions disableSpacing>

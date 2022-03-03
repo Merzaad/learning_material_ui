@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Paper, Grid } from '@mui/material'
-import themeMaker from '../features/themeMaker'
+import themeMaker from '../../features/themeMaker'
 
 const Paper4 = () => {
   const { paperColor } = themeMaker()

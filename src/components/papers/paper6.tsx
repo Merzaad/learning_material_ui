@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Paper } from '@mui/material'
-import themeMaker from '../features/themeMaker'
-import DataGridM from './dataGrid/dataGrid'
+import themeMaker from '../../features/themeMaker'
+import TabM from '../tab/tab'
 
-const Paper3 = () => {
+const Paper6 = () => {
   const { paperColor } = themeMaker()
   return (
     <Paper
@@ -13,8 +13,9 @@ const Paper3 = () => {
         background: paperColor,
       }}
     >
-      <DataGridM />
+      <TabM index={0} />
     </Paper>
   )
 }
-export default Paper3
+
+export default Paper6
