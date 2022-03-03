@@ -9,10 +9,10 @@ const testApi = async () => {
   + 'apiKey=f1a22ede52574494bd6efba4dc31cd2e'
   const response = await fetch(url, options)
   console.log('GET request sent')
-  const json = await response.text()
+  const responseJSON = await response.text()
   console.log('data retrieved')
-  const obj = await JSON.parse(json)
+  const responseObject = await JSON.parse(responseJSON)
   console.log('json parsed')
-  return obj
+  return responseObject
 }
 export default testApi

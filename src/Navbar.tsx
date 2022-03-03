@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { Box, Switch } from '@mui/material'
 import { Outlet } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { selectDarkMode, toggleDarkMode } from '../../features/layoutSlice'
-import SnackbarM from '../snackbar/snackbar'
-import themeMaker from '../../features/themeMaker'
+import { useAppDispatch, useAppSelector } from './app/hooks'
+import { selectDarkMode, toggleDarkMode } from './features/layoutSlice'
+import TestApiSnackbar from './components/snackbar/snackbar'
+import themeMaker from './features/themeMaker'
 
 const navbarM = () => {
   const dispatch = useAppDispatch()
@@ -30,7 +30,7 @@ const navbarM = () => {
         }}
       >
         <Switch checked={darkMode} onChange={handleDarkMode} color="default" />
-        <SnackbarM index={0} />
+        <TestApiSnackbar index={0} />
       </Box>
       <Outlet />
     </div>

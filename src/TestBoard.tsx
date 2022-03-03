@@ -9,7 +9,7 @@ import Paper6 from './components/paper6'
 import SpeedDialM from './components/speedDial/speedDial'
 import themeMaker from './features/themeMaker'
 
-const App = () => {
+const TestBoard = () => {
   const { appColor } = themeMaker()
   return (
     <div
@@ -46,4 +46,4 @@ const App = () => {
   )
 }
 
-export default App
+export default TestBoard

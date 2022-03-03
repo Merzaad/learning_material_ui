@@ -16,28 +16,28 @@ import { useAppDispatch } from '../../app/hooks'
 import { toggleCardMenu } from '../../features/layoutSlice'
 import CardMenu from '../menu/menu'
 import themeMaker from '../../features/themeMaker'
-import { cardDataType } from '../../features/types'
+import { testDataType } from '../../features/types'
 
-type card = {
-  index: number
-  data: cardDataType
+type cardData = {
+  data: testDataType
 }
 
-const CardM = (props: card) => {
-  const { index, data } = props
+const CardM = (props: cardData) => {
+  const { data } = props
   const { bgColor, txtColor } = themeMaker()
   const dispatch = useAppDispatch()
 
   const handleMenu = (): void => {
-    dispatch(toggleCardMenu(index))
+    dispatch(toggleCardMenu(data.index))
   }
 
   return (
     <Card
-      key={index}
+      key={data.index}
       sx={{
         background: bgColor,
         color: txtColor,
+        height: '500px',
       }}
     >
       <CardHeader
@@ -49,7 +49,7 @@ const CardM = (props: card) => {
                 color: txtColor,
               }}
               onClick={handleMenu}
-              id={`card${index}`}
+              id={`card${data.index}`}
             >
               <MoreHorizIcon />
             </IconButton>
@@ -65,7 +65,7 @@ const CardM = (props: card) => {
         src={data ? data.imgSrc : 'initialTitle'}
         alt="Card Media Alt"
       />
-      <CardMenu index={index} />
+      <CardMenu index={data.index} />
       <CardContent>
         {data ? data.text : 'initialTitle'}
       </CardContent>

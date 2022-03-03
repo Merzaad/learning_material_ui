@@ -12,7 +12,7 @@ type snackbar = {
   index: number
 }
 
-const SnackbarM = (props: snackbar) => {
+const TestApiSnackbar = (props: snackbar) => {
   const { index } = props
   const { bgColor, txtColor } = themeMaker()
   const dispatch = useAppDispatch()
@@ -21,16 +21,16 @@ const SnackbarM = (props: snackbar) => {
   const handleRequest = (): void => {
     dispatch(toggleSnackbar({ target: index, value: true }))
     testApi()
-      .then((data) => {
-        for (let i = 0; i < 10; i += 1) {
+      .then(
+        (responseObject) => responseObject.articles.forEach((article: any, id: number) => {
           dispatch(testApiSetData({
-            index: i,
-            text: data.articles[i].description,
-            title: data.articles[i].title,
-            imgSrc: data.articles[i].urlToImage,
+            index: id,
+            text: article.description,
+            title: article.title,
+            imgSrc: article.urlToImage,
           }))
-        }
-      })
+        }),
+      )
       .catch((error) => console.log(`handleClick -> error : ${error}`))
   }
 
@@ -61,7 +61,7 @@ const SnackbarM = (props: snackbar) => {
         }}
         onClick={handleRequest}
       >
-        snackbar + testApi
+        testApi news
       </Button>
       <Snackbar
         open={isOpen}
@@ -74,4 +74,4 @@ const SnackbarM = (props: snackbar) => {
   )
 }
 
-export default SnackbarM
+export default TestApiSnackbar

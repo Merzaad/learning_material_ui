@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { LayoutState, cardDataType } from './types'
+import { LayoutState, testDataType } from './types'
 
 const initialState: LayoutState = {
   darkMode: !!(localStorage.getItem('darkMode') === 'true'),
@@ -9,7 +9,7 @@ const initialState: LayoutState = {
   stepperActive: [0],
   tabActive: ['0'],
   snackbarOpen: [false],
-  testCardData: [],
+  testDataBase: [],
 }
 
 export const layoutSlice = createSlice({
@@ -46,17 +46,17 @@ export const layoutSlice = createSlice({
       const id = action.payload.target
       x.snackbarOpen[id] = action.payload.value
     },
-    testApiSetData: (state, action: PayloadAction<cardDataType>) => {
+    testApiSetData: (state, action: PayloadAction<testDataType>) => {
       const x = state
       const data = action.payload
       const { index } = data
-      x.testCardData[index] = data
+      x.testDataBase[index] = data
     },
   },
 })
 
 export const selectDarkMode = (state: RootState) => state.layout.darkMode
-export const selectTestData = (state: RootState) => state.layout.testCardData
+export const selectTestDataBase = (state: RootState) => state.layout.testDataBase
 export const cardMenuOpen = (state: RootState) => state.layout.cardMenuOpen
 export const accordionDrop = (state: RootState) => state.layout.accordionDrop
 export const stepperActive = (state: RootState) => state.layout.stepperActive

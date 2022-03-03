@@ -3,19 +3,16 @@ import { Grid } from '@mui/material'
 import CardM from './components/card/card'
 import themeMaker from './features/themeMaker'
 import { useAppSelector } from './app/hooks'
-import { selectTestData } from './features/layoutSlice'
+import { selectTestDataBase } from './features/layoutSlice'
 
-const TestApp = () => {
+const Board = () => {
   const { appColor } = themeMaker()
-  const board : any[] = []
-  for (let i = 2; i < 10; i += 1) {
-    const data = useAppSelector(selectTestData)
-    board.push(
-      <Grid key={i} item xs={12} md={3}>
-        <CardM data={data[i]} index={i} />
-      </Grid>,
-    )
-  }
+  const testDataBase = useAppSelector(selectTestDataBase)
+  const board = testDataBase.map((data) => (
+    <Grid key={data.index} item xs={12} md={3}>
+      <CardM data={data} />
+    </Grid>
+  ))
   return (
     <div
       style={{
@@ -32,4 +29,4 @@ const TestApp = () => {
   )
 }
 
-export default TestApp
+export default Board

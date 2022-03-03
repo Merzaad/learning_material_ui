@@ -1,4 +1,4 @@
-export type cardDataType = {
+export type testDataType = {
   index: number,
   text: string,
   title: string,
@@ -12,5 +12,5 @@ export interface LayoutState {
   stepperActive: number[]
   tabActive: string[]
   snackbarOpen: boolean[]
-  testCardData: cardDataType[]
+  testDataBase: testDataType[]
 }
