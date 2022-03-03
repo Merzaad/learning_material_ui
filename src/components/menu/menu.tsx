@@ -7,21 +7,21 @@ type menu = {
   index: number
 }
 
-const MenuM = (props: menu) => {
+const CardMenu = (props: menu) => {
   const dispatch = useAppDispatch()
   const { index } = props
-  const ancher = document.getElementById(`card${index}`)
-  const isOpen = useAppSelector(cardMenuOpen)[index]
+  const anchor = document.getElementById(`card${index}`)
+  const isOpen = useAppSelector(cardMenuOpen)[index] || false
 
   const handleMenu = (): void => {
     dispatch(toggleCardMenu(index))
   }
 
   return (
-    <Menu anchorEl={ancher} open={isOpen} onClose={handleMenu} elevation={0}>
+    <Menu anchorEl={anchor} open={isOpen} onClose={handleMenu} elevation={0}>
       <MenuItem onClick={handleMenu}>Bookmark</MenuItem>
       <MenuItem onClick={handleMenu}>Delete</MenuItem>
     </Menu>
   )
 }
-export default MenuM
+export default CardMenu

@@ -1,14 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '../app/store'
-import { LayoutState } from './types'
+import { LayoutState, cardDataType } from './types'
 
 const initialState: LayoutState = {
   darkMode: !!(localStorage.getItem('darkMode') === 'true'),
-  cardMenuOpen: [false, false, false, false],
+  cardMenuOpen: [],
   accordionDrop: [false, false, false, false],
   stepperActive: [0],
   tabActive: ['0'],
   snackbarOpen: [false],
+  testCardData: [],
 }
 
 export const layoutSlice = createSlice({
@@ -45,10 +46,17 @@ export const layoutSlice = createSlice({
       const id = action.payload.target
       x.snackbarOpen[id] = action.payload.value
     },
+    testApiSetData: (state, action: PayloadAction<cardDataType>) => {
+      const x = state
+      const data = action.payload
+      const { index } = data
+      x.testCardData[index] = data
+    },
   },
 })
 
 export const selectDarkMode = (state: RootState) => state.layout.darkMode
+export const selectTestData = (state: RootState) => state.layout.testCardData
 export const cardMenuOpen = (state: RootState) => state.layout.cardMenuOpen
 export const accordionDrop = (state: RootState) => state.layout.accordionDrop
 export const stepperActive = (state: RootState) => state.layout.stepperActive
@@ -56,7 +64,8 @@ export const tabAcive = (state: RootState) => state.layout.tabActive
 export const snackbarOpen = (state: RootState) => state.layout.snackbarOpen
 
 export const {
-  toggleDarkMode, toggleCardMenu, toggleAccordion, changeStepper, changeTab, toggleSnackbar,
+  toggleDarkMode, toggleCardMenu, toggleAccordion,
+  changeStepper, changeTab, toggleSnackbar, testApiSetData,
 } = layoutSlice.actions
 
 export default layoutSlice.reducer

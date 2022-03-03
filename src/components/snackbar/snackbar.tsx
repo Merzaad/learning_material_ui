@@ -4,7 +4,7 @@ import * as React from 'react'
 import { Box, IconButton, Snackbar, Button } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { snackbarOpen, toggleSnackbar } from '../../features/layoutSlice'
+import { snackbarOpen, toggleSnackbar, testApiSetData } from '../../features/layoutSlice'
 import themeMaker from '../../features/themeMaker'
 import testApi from '../../features/testApi'
 
@@ -21,7 +21,16 @@ const SnackbarM = (props: snackbar) => {
   const handleRequest = (): void => {
     dispatch(toggleSnackbar({ target: index, value: true }))
     testApi()
-      .then((data) => console.log(data))
+      .then((data) => {
+        for (let i = 0; i < 10; i += 1) {
+          dispatch(testApiSetData({
+            index: i,
+            text: data.articles[i].description,
+            title: data.articles[i].title,
+            imgSrc: data.articles[i].urlToImage,
+          }))
+        }
+      })
       .catch((error) => console.log(`handleClick -> error : ${error}`))
   }
 

@@ -14,15 +14,17 @@ import ShareIcon from '@mui/icons-material/Share'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz'
 import { useAppDispatch } from '../../app/hooks'
 import { toggleCardMenu } from '../../features/layoutSlice'
-import MenuM from '../menu/menu'
+import CardMenu from '../menu/menu'
 import themeMaker from '../../features/themeMaker'
+import { cardDataType } from '../../features/types'
 
 type card = {
   index: number
+  data: cardDataType
 }
 
 const CardM = (props: card) => {
-  const { index } = props
+  const { index, data } = props
   const { bgColor, txtColor } = themeMaker()
   const dispatch = useAppDispatch()
 
@@ -39,7 +41,7 @@ const CardM = (props: card) => {
       }}
     >
       <CardHeader
-        title={`cardItem${index}`}
+        title={data ? data.title : 'initialTitle'}
         action={
           <Tooltip title="tooltip" placement="top">
             <IconButton
@@ -60,13 +62,12 @@ const CardM = (props: card) => {
       <CardMedia
         component="img"
         height="194"
-        src="https://mui.com/static/images/cards/paella.jpg"
+        src={data ? data.imgSrc : 'initialTitle'}
         alt="Card Media Alt"
       />
-      <MenuM index={index} />
+      <CardMenu index={index} />
       <CardContent>
-        Using this approach in production is discouraged though - the client has to download the
-        entire library, regardless
+        {data ? data.text : 'initialTitle'}
       </CardContent>
       <CardActions disableSpacing>
         <IconButton>
